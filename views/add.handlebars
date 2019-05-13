@@ -1,0 +1,41 @@
+  <section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Add A Jetski</h1>
+      <p>Your contact email will be shared with registered users to rent your jetski</p>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action='/jetskis/add' method='POST'>
+        <div class="input-group">
+          <label for="name">Jetski name</label>
+          <input type="text" name="name" id="name" class="input-box"
+            maxlength="100" value={{name}}>
+        </div>
+        <div class="input-group">
+          <label for="location">Location</label>
+          <input type="text" name="location" id="location" class="input-box" placeholder="eg. Miami"
+          maxlength="100" value={{location}}>
+        </div>
+        <div class="input-group">
+          <label for="type">Type</label>
+          <input type="text" name="type" id="type" class="input-box" placeholder="eg. Recreation, Sport, Race" value={{type}}>
+        </div>
+        <div class="input-group">
+          <label for="price">Price per day (Leave blank for unknown)</label>
+          <input type="number" name="price" id="price" class="input-box" placeholder="eg. 500, 5000, 10000" value={{price}}>
+        </div>
+        <div class="input-group">
+          <label for="description">Jetski Description</label>
+          <textarea name="description" id="description" class="input-box" placeholder="Describe the details of the jetski"
+            rows="10" value={{description}}></textarea>
+        </div>
+        <div class="input-group">
+          <label for="email">Contact Email</label>
+          <input type="email" name="email" id="email" class="input-box" placeholder="Enter an email" value={{email}}>
+        </div>
+        <input type="submit" value="Add Jetski" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>

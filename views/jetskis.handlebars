@@ -1,0 +1,21 @@
+  <section id="Jetskis" class="container">
+    <h1>All Jetskis</h1>
+
+    {{#each jetskis}}
+        <div class="jetski">
+        <h3>{{name}}</h3>
+        <p>{{description}}!</p>
+        <ul>
+            <li>Price (per day): ${{price}}</li>
+            <li><a href="mailto:{{email}}" class="btn btn-reverse">Book Now</a></li>
+        </ul>
+        <p>Type: {{type}}</p>
+        <div class="location">
+            <small>City: <span>{{location}}</span></small>
+        </div>
+        </div>
+    {{else}}
+        <p>No jetskis available</p>
+    {{/each}}
+
+  </section>
